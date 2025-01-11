@@ -9,6 +9,9 @@ export enum Dir {
   Left,
 }
 
+export type FieldEl = EmptyCell | PlantedCell
+export type FieldData = FieldEl[][]
+
 const EmptyCellRuels: {
   // fieldWetnesState: CellWetnesState; // Current state of the field
   tiksUntilChangingWetnesState: number | null // If null => Field is dry => (fieldWetnesState will not change)
@@ -64,14 +67,14 @@ function applyDirToPosition(currentPosition: [number, number], dir: Dir): [numbe
 ;[]
 
 export class Field {
-  field: Array<EmptyCell | PlantedCell>[]
+  field: FieldData
   fieldSize: [number, number]
   playerPosition: [number, number] = [0, 0]
 
   /** Creates a new Field instance (U can send just one of params), other one will be calculated. */
   constructor(
     size?: [number, number],
-    field?: Array<EmptyCell | PlantedCell>[],
+    field?: FieldData,
     playerPosition: [number, number] = [0, 0],
   ) {
     if (field) {

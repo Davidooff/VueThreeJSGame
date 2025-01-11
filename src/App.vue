@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, type Ref } from 'vue'
 import GameComponent from './components/Game.vue'
 import Game from './game-logic/classes'
 import { clearSave } from './game-logic/game-data/data/clear-save'
 
-let game = ref<Game | null>(null)
+let game: Ref<Game | null> = ref(null)
 
 function startGame(isNewGame: boolean) {
   const save = localStorage.getItem('save')

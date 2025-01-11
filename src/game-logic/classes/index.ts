@@ -79,6 +79,7 @@ class Game {
     } else {
       throw new Error('Not enough money')
     }
+    console.log(this.field)
   }
 
   unlockSkill(title: string) {
