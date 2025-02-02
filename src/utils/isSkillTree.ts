@@ -1,4 +1,4 @@
-import { MySkillData, SkillTree } from "../data/skills";
+import type { MySkillData, SkillTree } from "@/game-logic/game-data/data/skills";
 
 export default function isSkillTree(
   node: SkillTree<MySkillData> | MySkillData

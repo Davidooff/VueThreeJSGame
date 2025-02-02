@@ -19,7 +19,7 @@ export interface SaveData {
 
 const defaultStartPlants: Plant[] = [
   {
-    title: 'Cactuse',
+    title: 'Wheat',
     growthDuration: 20,
     needWetStateToGrow: CellWetnesState.Dry,
     plantCost: 1,
